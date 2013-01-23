@@ -5,23 +5,23 @@
 %define 	module	django-evolution
 Summary:	Schema evolution for Django
 Name:		python-django-evolution
-Version:	0.6.5
+Version:	0.6.7
 Release:	1
 License:	BSD
 Group:		Development/Languages
 URL:		http://code.google.com/p/django-evolution/
 Source0:	http://pypi.python.org/packages/source/d/django_evolution/django_evolution-%{version}.tar.gz
-# Source0-md5:	81f9c8f1815707ed2c221f5c5b531ed9
+# Source0-md5:	24b8373916f53f74d701b99a6cf41409
 BuildRequires:	python-coverage
 BuildRequires:	python-devel
-BuildRequires:	python-django
+BuildRequires:	python-django >= 1.1.1
 BuildRequires:	python-nose
 BuildRequires:	python-pyflakes
 BuildRequires:	python-setuptools
 BuildRequires:	python-sqlite
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
-Requires:	python-django
+Requires:	python-django >= 1.1.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,6 +40,8 @@ over time, and to update the database to reflect those changes.
 %{__sed} -i -e 's/^from ez_setup/#from ez_setup/' setup.py
 %{__sed} -i -e 's/^use_setuptools()/#use_setuptools()/' setup.py
 
+%{__rm} -r *.egg-info
+
 %build
 %{__python} setup.py build
 
@@ -57,8 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_postclean
 
-rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/django_evolution/tests
-rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/tests
+# Delete tests. They aren't useful in an installed system
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/django_evolution/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
