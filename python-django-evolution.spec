@@ -6,7 +6,7 @@
 Summary:	Schema evolution for Django
 Name:		python-django-evolution
 Version:	0.6.7
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 URL:		http://code.google.com/p/django-evolution/
