@@ -5,13 +5,13 @@
 %define 	module	django-evolution
 Summary:	Schema evolution for Django
 Name:		python-django-evolution
-Version:	0.6.7
-Release:	2
+Version:	0.6.8
+Release:	1
 License:	BSD
 Group:		Development/Languages
 URL:		http://code.google.com/p/django-evolution/
 Source0:	http://pypi.python.org/packages/source/d/django_evolution/django_evolution-%{version}.tar.gz
-# Source0-md5:	24b8373916f53f74d701b99a6cf41409
+# Source0-md5:	e3393e745810ecffc7bbe647effcf86a
 BuildRequires:	python-coverage
 BuildRequires:	python-devel
 BuildRequires:	python-django >= 1.1.1
