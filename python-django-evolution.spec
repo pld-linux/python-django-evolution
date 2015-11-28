@@ -43,7 +43,7 @@ over time, and to update the database to reflect those changes.
 %{__rm} -r *.egg-info
 
 %build
-%{__python} setup.py build
+%py_build
 
 %if %{with tests}
 %{__python} tests/runtests.py
@@ -52,9 +52,7 @@ over time, and to update the database to reflect those changes.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install \
-	--optimize=2 \
-	--skip-build \
+%py_install \
 	--root $RPM_BUILD_ROOT
 
 %py_postclean
