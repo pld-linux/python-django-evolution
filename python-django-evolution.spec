@@ -19,7 +19,7 @@ BuildRequires:	python-nose
 BuildRequires:	python-pyflakes
 BuildRequires:	python-setuptools
 BuildRequires:	python-sqlite
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	sed >= 4.0
 Requires:	python-django >= 1.1.1
 BuildArch:	noarch
