@@ -1,12 +1,12 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 
-%define 	module	django-evolution
+%define		module	django-evolution
 Summary:	Schema evolution for Django
 Name:		python-django-evolution
 Version:	0.6.8
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages
 URL:		http://code.google.com/p/django-evolution/
